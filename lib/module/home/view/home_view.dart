@@ -308,7 +308,7 @@ class HomeView extends StatefulWidget {
                                 style: TextStyle(
                                   fontSize: 20.0,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                 ),
                               ),
                               SizedBox(
@@ -317,7 +317,7 @@ class HomeView extends StatefulWidget {
                               Text(
                                 "Kabupaten Indragiri Hulu \n Jl Raya Belilas Km.06 Pematang Reba Rengat BaratKab. Indragiri Hulu \n Telp. (0769) 341002 \n Fax. (0769) 341194 \n Kode Pos : 29351 ",
                                 style: TextStyle(
-                                    fontSize: 15.0, color: Colors.white),
+                                    fontSize: 15.0, color: Colors.black),
                               ),
                             ],
                           ),
