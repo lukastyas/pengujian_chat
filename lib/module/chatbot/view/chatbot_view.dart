@@ -1,8 +1,6 @@
 import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:flutter/material.dart';
 import 'package:pengujian_chat/core.dart';
-import 'package:pengujian_chat/module/chatbot/view/Messages.dart';
-import '../controller/chatbot_controller.dart';
 
 // ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
 

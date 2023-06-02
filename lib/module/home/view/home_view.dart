@@ -13,6 +13,8 @@ class HomeView extends StatefulWidget {
       'assets/images/luar.jpg',
       'assets/images/mobildalam.jpg',
       'assets/images/ruangdalam.jpg',
+      'assets/images/anggota.jpeg',
+      'assets/images/people.jpeg'
     ];
 
     void showImageDetail(BuildContext context, String imagePath) {
@@ -39,7 +41,6 @@ class HomeView extends StatefulWidget {
       // ),
       body: SingleChildScrollView(
         child: SizedBox(
-          height: MediaQuery.of(context).size.height * 5,
           width: MediaQuery.of(context).size.width * 5,
           // padding: const EdgeInsets.all(10.0),
           child: Column(
@@ -48,24 +49,18 @@ class HomeView extends StatefulWidget {
                 height: 200,
                 width: MediaQuery.of(context).size.width * 5,
                 decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(12),
+                      bottomRight: Radius.circular(12)),
                   color: Colors.grey,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0x19000000),
+                      blurRadius: 24,
+                      offset: Offset(0, 11),
+                    ),
+                  ],
                 ),
-                // Container(
-                //   width: MediaQuery.of(context).size.width,
-                //   height: 250,
-                //   decoration: const BoxDecoration(
-                //     image: DecorationImage(
-                //       image: NetworkImage(
-                //         "assets/images/ruangdalam.jpg",
-                //       ),
-                //       fit: BoxFit.fill,
-                //     ),
-                //     // borderRadius: BorderRadius.all(
-                //     //   Radius.circular(
-                //     //     16.0,
-                //     //   ),
-                //     // ),
-                //   ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -255,37 +250,101 @@ class HomeView extends StatefulWidget {
                 height: 10.0,
               ),
               Container(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [],
+                child: InkWell(
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          content: Image.network(
+                            "assets/images/alur.jpeg",
+                            fit: BoxFit.contain,
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  child: Card(
+                    child: Container(
+                      height: 400,
+                      width: 400,
+                      decoration: BoxDecoration(
+                          image: const DecorationImage(
+                              image: NetworkImage("assets/images/alur.jpeg"),
+                              fit: BoxFit.contain),
+                          borderRadius: BorderRadius.circular(10.0)),
+                    ),
+                  ),
                 ),
-              )
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Container(
+                height: 225,
+                width: MediaQuery.of(context).size.width,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(12),
+                      topRight: Radius.circular(12)),
+                  color: Colors.grey,
+                ),
+                child: SizedBox(
+                  height: 100.0,
+                  width: MediaQuery.of(context).size.width * 5,
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          width: MediaQuery.of(context).size.width,
+                          padding: const EdgeInsets.all(10),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Padding(padding: EdgeInsets.only(top: 30.0)),
+                              Text(
+                                "UPT Pengujian Kendaraan Bermotor",
+                                style: TextStyle(
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10.0,
+                              ),
+                              Text(
+                                "Kabupaten Indragiri Hulu \n Jl Raya Belilas Km.06 Pematang Reba Rengat BaratKab. Indragiri Hulu \n Telp. (0769) 341002 \n Fax. (0769) 341194 \n Kode Pos : 29351 ",
+                                style: TextStyle(
+                                    fontSize: 15.0, color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 15.0,
+                      ),
+                      const Text(
+                        "© Copyright by 2023. All Rights Reserved",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(
+                        height: 10.0,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
       ),
     );
-
-    // return Scaffold(
-    //   body: SingleChildScrollView(
-    //     child: Container(
-    //       padding: const EdgeInsets.all(20.0),
-    //       child: Column(
-    //         children: [
-    //           ElevatedButton.icon(
-    //             icon: const Icon(Icons.chat),
-    //             label: const Text("Ask Me"),
-    //             style: ElevatedButton.styleFrom(
-    //               backgroundColor: Colors.blueGrey,
-    //             ),
-    //             onPressed: () => controller.doChat(),
-    //           ),
-    //         ],
-    //       ),
-    //     ),
-    //   ),
-    // );
   }
 
   @override
